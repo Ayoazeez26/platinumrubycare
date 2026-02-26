@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platinum Ruby Care | Nurse-Led Mental Health Specialist</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-ruby: #A10F18;
+      --deep-ruby: #2E1113;
+      --platinum-neutral: #D4CDC1;
+      --charcoal-text: #706562;
+      --off-white: #F6F6F5;
+    }
+    body { font-family: 'Inter', sans-serif; }
+    .font-serif { font-family: 'Cormorant Garamond', serif; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .animate-fade-in { animation: fadeIn 0.7s ease-out forwards; }
+    @keyframes slideInFromTop { from { transform: translateY(-10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .animate-slide-in { animation: slideInFromTop 0.3s ease-out forwards; }
+    .icon { flex-shrink: 0; }
+  </style>
+</head>
+<body class="min-h-screen bg-[#F6F6F5] text-[#706562]" style="font-family: 'Inter', sans-serif;">
+  <!-- SVG Icons (inline, hidden) -->
+  <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="18" x2="20" y2="18"/></symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+    <symbol id="icon-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+    <symbol id="icon-stethoscope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="icon-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="icon-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="icon-external-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+    <symbol id="icon-user-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></symbol>
+    <symbol id="icon-clipboard-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+    <symbol id="icon-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></symbol>
+    <symbol id="icon-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+    <symbol id="icon-shopping-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+    <symbol id="icon-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/></symbol>
+    <symbol id="icon-microscope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></symbol>
+    <symbol id="icon-lightbulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></symbol>
+    <symbol id="icon-graduation-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="icon-user-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></symbol>
+    <symbol id="icon-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></symbol>
+    <symbol id="icon-bar-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></symbol>
+    <symbol id="icon-fingerprint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 10v2"/><path d="M14.2 4C13 2.7 11 2 9 2 5.5 2 2.6 4.9 2 8.5"/><path d="m15.2 9-1.9 1.4"/><path d="M16 12a4 4 0 0 1-4 4 14 14 0 0 1-10-3"/><path d="M16.5 17.4a6 6 0 0 1-3.5 1.1 6 6 0 0 1-2-3"/><path d="M19.9 5.6A10 10 0 0 1 21 12"/></symbol>
+  </svg>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="setPage('home')">
+          <span class="text-xl md:text-2xl font-serif font-bold tracking-tight uppercase" style="color: #2E1113;">
+            Platinum <span style="color: #A10F18;">Ruby Care</span>
+          </span>
+        </div>
+        <div class="hidden lg:flex items-center space-x-8">
+          <button data-nav="home" class="nav-link text-sm font-bold tracking-wide hover:text-[#A10F18] text-[#706562]">Home</button>
+          <button data-nav="about" class="nav-link text-sm font-bold tracking-wide hover:text-[#A10F18] text-[#706562]">About Us</button>
+          <button data-nav="domiciliary" class="nav-link text-sm font-bold tracking-wide hover:text-[#A10F18] text-[#706562]">Domiciliary Care</button>
+          <button data-nav="supported" class="nav-link text-sm font-bold tracking-wide hover:text-[#A10F18] text-[#706562]">Supported Living</button>
+          <button data-nav="consulting" class="nav-link text-sm font-bold tracking-wide hover:text-[#A10F18] text-[#706562]">Consulting</button>
+          <button data-nav="referrals" class="nav-link text-sm font-bold tracking-wide hover:text-[#A10F18] text-[#706562]">Referrals</button>
+          <button data-nav="careers" class="nav-link text-sm font-bold tracking-wide hover:text-[#A10F18] text-[#706562]">Careers</button>
+          <button data-nav="insights" class="nav-link text-sm font-bold tracking-wide hover:text-[#A10F18] text-[#706562]">Insights</button>
+          <button data-nav="contact" class="nav-link text-sm font-bold tracking-wide hover:text-[#A10F18] text-[#706562]">Contact</button>
+          <button onclick="setPage('referrals')" class="bg-[#A10F18] text-white px-6 py-2.5 rounded-sm text-sm font-bold hover:bg-[#2E1113] transition-all shadow-md">Make a Referral</button>
+        </div>
+        <div class="lg:hidden">
+          <button id="menu-toggle" class="text-[#2E1113] p-2">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-menu"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-100 px-4 py-8 shadow-2xl">
+      <div class="space-y-2">
+        <button onclick="setPage('home'); closeMenu();" class="block w-full text-left text-lg font-bold py-3 border-b border-gray-50 text-[#706562] hover:text-[#A10F18]">Home</button>
+        <button onclick="setPage('about'); closeMenu();" class="block w-full text-left text-lg font-bold py-3 border-b border-gray-50 text-[#706562] hover:text-[#A10F18]">About Us</button>
+        <button onclick="setPage('domiciliary'); closeMenu();" class="block w-full text-left text-lg font-bold py-3 border-b border-gray-50 text-[#706562] hover:text-[#A10F18]">Domiciliary Care</button>
+        <button onclick="setPage('supported'); closeMenu();" class="block w-full text-left text-lg font-bold py-3 border-b border-gray-50 text-[#706562] hover:text-[#A10F18]">Supported Living</button>
+        <button onclick="setPage('consulting'); closeMenu();" class="block w-full text-left text-lg font-bold py-3 border-b border-gray-50 text-[#706562] hover:text-[#A10F18]">Consulting</button>
+        <button onclick="setPage('referrals'); closeMenu();" class="block w-full text-left text-lg font-bold py-3 border-b border-gray-50 text-[#706562] hover:text-[#A10F18]">Referrals</button>
+        <button onclick="setPage('careers'); closeMenu();" class="block w-full text-left text-lg font-bold py-3 border-b border-gray-50 text-[#706562] hover:text-[#A10F18]">Careers</button>
+        <button onclick="setPage('insights'); closeMenu();" class="block w-full text-left text-lg font-bold py-3 border-b border-gray-50 text-[#706562] hover:text-[#A10F18]">Insights</button>
+        <button onclick="setPage('contact'); closeMenu();" class="block w-full text-left text-lg font-bold py-3 border-b border-gray-50 text-[#706562] hover:text-[#A10F18]">Contact</button>
+      </div>
+      <button onclick="setPage('referrals'); closeMenu();" class="w-full mt-8 bg-[#A10F18] text-white py-4 rounded-sm font-bold text-lg">Make a Referral</button>
+    </div>
+  </nav>
+
+  <main id="main-content" class="transition-opacity duration-500">
+    <!-- HOME -->
+    <div id="page-home" class="page">
+      <section class="relative min-h-[95vh] flex items-center pt-40 lg:pt-52 overflow-hidden bg-white">
+        <div class="absolute inset-0 z-0">
+          <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10 lg:via-white/60"></div>
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=2000" alt="Healthcare Leadership" class="w-full h-full object-cover object-[50%_20%]" />
+        </div>
+        <div class="relative z-20 max-w-7xl mx-auto px-4 w-full pb-40">
+          <div class="max-w-2xl">
+            <div class="flex items-center space-x-3 text-[#A10F18] mb-6 font-bold tracking-[0.2em] text-xs uppercase">
+              <div class="w-10 h-[2px] bg-[#A10F18]"></div>
+              <span>Nurse-Led Mental Health Specialist</span>
+            </div>
+            <h1 class="text-5xl lg:text-7xl font-serif font-bold text-[#2E1113] leading-[1.05] mb-8">
+              Clinically Informed <br />
+              <span class="text-[#A10F18]">Pathways to </span> <br />
+              Independence.
+            </h1>
+            <p class="text-xl text-[#706562] mb-12 leading-relaxed max-w-lg font-medium">
+              Specialist support for young adults, delivering hospital-standard clinical rigour in a community setting.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-5">
+              <button onclick="setPage('referrals')" class="bg-[#A10F18] text-white px-10 py-5 rounded-sm font-bold flex items-center justify-center hover:bg-[#2E1113] transition-all shadow-xl shadow-red-900/20">
+                Request Support <svg class="w-5 h-5 ml-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-arrow-right"/></svg>
+              </button>
+              <button onclick="setPage('about')" class="bg-white/40 backdrop-blur-sm border border-[#D4CDC1] text-[#2E1113] px-10 py-5 rounded-sm font-bold hover:bg-white transition-all shadow-sm">Our Clinical Story</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-24 bg-white relative z-30">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:-mt-24">
+            <div class="bg-white p-10 shadow-2xl hover:-translate-y-2 transition-all border-b-4 border-[#A10F18] cursor-pointer ring-1 ring-gray-100 group">
+              <svg class="text-[#A10F18] mb-8 w-9 h-9 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-heart"/></svg>
+              <h3 class="text-xl font-bold text-[#2E1113] mb-4 group-hover:text-[#A10F18] transition-colors">Families & Young People</h3>
+              <p class="text-[#706562] text-sm leading-relaxed mb-8">Expert care that respects dignity and fosters independence.</p>
+              <span class="text-xs font-bold uppercase tracking-widest text-[#A10F18] flex items-center">Learn More <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-arrow-right"/></svg></span>
+            </div>
+            <div class="bg-white p-10 shadow-2xl hover:-translate-y-2 transition-all border-b-4 border-[#A10F18] cursor-pointer ring-1 ring-gray-100 group">
+              <svg class="text-[#A10F18] mb-8 w-9 h-9 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-stethoscope"/></svg>
+              <h3 class="text-xl font-bold text-[#2E1113] mb-4 group-hover:text-[#A10F18] transition-colors">Professionals & Referrers</h3>
+              <p class="text-[#706562] text-sm leading-relaxed mb-8">Streamlined clinical assessments and robust risk management.</p>
+              <span class="text-xs font-bold uppercase tracking-widest text-[#A10F18] flex items-center">Learn More <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-arrow-right"/></svg></span>
+            </div>
+            <div class="bg-white p-10 shadow-2xl hover:-translate-y-2 transition-all border-b-4 border-[#A10F18] cursor-pointer ring-1 ring-gray-100 group">
+              <svg class="text-[#A10F18] mb-8 w-9 h-9 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-shield-check"/></svg>
+              <h3 class="text-xl font-bold text-[#2E1113] mb-4 group-hover:text-[#A10F18] transition-colors">Commissioners & Partners</h3>
+              <p class="text-[#706562] text-sm leading-relaxed mb-8">Outcomes-focused housing and high-acuity support solutions.</p>
+              <span class="text-xs font-bold uppercase tracking-widest text-[#A10F18] flex items-center">Learn More <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-arrow-right"/></svg></span>
+            </div>
+            <div class="bg-white p-10 shadow-2xl hover:-translate-y-2 transition-all border-b-4 border-[#A10F18] cursor-pointer ring-1 ring-gray-100 group">
+              <svg class="text-[#A10F18] mb-8 w-9 h-9 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-users"/></svg>
+              <h3 class="text-xl font-bold text-[#2E1113] mb-4 group-hover:text-[#A10F18] transition-colors">Careers in Care</h3>
+              <p class="text-[#706562] text-sm leading-relaxed mb-8">Build a clinical career in a supportive, nurse-led culture.</p>
+              <span class="text-xs font-bold uppercase tracking-widest text-[#A10F18] flex items-center">Learn More <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-arrow-right"/></svg></span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-24 bg-[#F6F6F5]">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div>
+            <h2 class="text-4xl lg:text-5xl font-serif font-bold text-[#2E1113] mb-10 leading-tight">The Ruby Model: <br />Where Safety Meets Growth.</h2>
+            <div class="space-y-10">
+              <div class="flex gap-6">
+                <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center shrink-0 shadow-md"><svg class="w-7 h-7 text-[#A10F18]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-check-circle"/></svg></div>
+                <div><h4 class="font-bold text-xl text-[#2E1113] mb-2">Trauma-Informed Practice</h4><p class="text-[#706562] leading-relaxed">Recognising the impact of history while building a future.</p></div>
+              </div>
+              <div class="flex gap-6">
+                <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center shrink-0 shadow-md"><svg class="w-7 h-7 text-[#A10F18]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-check-circle"/></svg></div>
+                <div><h4 class="font-bold text-xl text-[#2E1113] mb-2">Nurse-Led Governance</h4><p class="text-[#706562] leading-relaxed">All support overseen by a Specialist Registered Mental Health Nurse.</p></div>
+              </div>
+              <div class="flex gap-6">
+                <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center shrink-0 shadow-md"><svg class="w-7 h-7 text-[#A10F18]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-check-circle"/></svg></div>
+                <div><h4 class="font-bold text-xl text-[#2E1113] mb-2">CBT-Integrated Support</h4><p class="text-[#706562] leading-relaxed">Incorporating therapeutic techniques into everyday life coaching.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute -top-10 -left-10 w-40 h-40 bg-[#D4CDC1]/30 rounded-full blur-3xl"></div>
+            <img src="https://images.unsplash.com/photo-1573497620053-ea5310f94a17?auto=format&fit=crop&q=80&w=1000" alt="Colleagues collaborating" class="relative z-10 rounded-sm shadow-2xl w-full" />
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="page-about" class="page hidden">
+      <div class="animate-fade-in pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
+            <div>
+              <span class="text-[#A10F18] font-bold tracking-widest uppercase text-sm mb-4 block">Our Heritage</span>
+              <h1 class="text-5xl font-serif font-bold text-[#2E1113] mb-8 leading-tight">Clinical Rigour. <br/>Community Compassion.</h1>
+              <p class="text-xl text-[#706562] mb-6 leading-relaxed">Platinum Ruby Care was born from the intersection of high-stakes mental health nursing and specialist housing management.</p>
+              <p class="text-[#706562] leading-relaxed mb-8">Our founder, <strong>Keasha Jasmin Isaac-Maja</strong>, recognized that clinical excellence in hospitals often failed to translate into community stability. By combining her 15+ years of NHS Senior Practice with her expertise in property development, she created a service that provides both a safe home and a therapeutic pathway.</p>
+              <div class="grid grid-cols-2 gap-6">
+                <div class="border-l-2 border-[#A10F18] pl-6 py-2"><h4 class="text-3xl font-bold text-[#2E1113] mb-1">NELFT</h4><p class="text-xs uppercase font-bold text-[#706562]">Senior Practitioner Lead</p></div>
+                <div class="border-l-2 border-[#A10F18] pl-6 py-2"><h4 class="text-3xl font-bold text-[#2E1113] mb-1">KLOE</h4><p class="text-xs uppercase font-bold text-[#706562]">CQC Standards Excellence</p></div>
+              </div>
+            </div>
+            <div class="bg-[#D4CDC1] aspect-[4/5] rounded-lg overflow-hidden relative shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=800" alt="Keasha Jasmin Isaac-Maja" class="w-full h-full object-cover" />
+              <div class="absolute bottom-0 left-0 right-0 bg-[#2E1113] p-10 text-white">
+                <p class="font-serif text-3xl font-bold mb-1">Keasha Jasmin Isaac-Maja</p>
+                <p class="text-[#A10F18] font-bold text-sm uppercase tracking-widest">Specialist RMN | Founder & Clinical Director</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOMICILIARY -->
+    <div id="page-domiciliary" class="page hidden">
+      <div class="animate-fade-in pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="max-w-3xl mb-20">
+            <div class="flex items-center space-x-2 text-[#A10F18] mb-6 font-bold tracking-widest uppercase text-sm"><div class="w-8 h-[2px] bg-[#A10F18]"></div><span>Home-Based Specialist Support</span></div>
+            <h1 class="text-5xl lg:text-6xl font-serif font-bold text-[#2E1113] mb-8 leading-tight">Nurse-Led Care, <br/><span class="text-[#A10F18]">In the Place You Call Home.</span></h1>
+            <p class="text-xl text-[#706562] leading-relaxed">Platinum Ruby Care provides specialist domiciliary care with profound mental health expertise. We support you to remain safely in your own home while maintaining independence and dignity.</p>
+          </div>
+          <div class="mb-32">
+            <div class="max-w-2xl mb-12"><h2 class="text-3xl lg:text-4xl font-serif font-bold text-[#2E1113] mb-4">What Support Includes</h2><p class="text-[#706562]">We provide a range of practical and emotional support activities tailored to your daily life.</p></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="bg-white p-8 border border-[#D4CDC1]/30 hover:border-[#A10F18] transition-colors shadow-sm"><svg class="text-[#A10F18] mb-4 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-user-check"/></svg><h4 class="font-bold text-[#2E1113] mb-2">Personal Care</h4><p class="text-sm text-[#706562] leading-relaxed">Dignified assistance with washing, dressing, and toileting.</p></div>
+              <div class="bg-white p-8 border border-[#D4CDC1]/30 hover:border-[#A10F18] transition-colors shadow-sm"><svg class="text-[#A10F18] mb-4 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-clipboard-check"/></svg><h4 class="font-bold text-[#2E1113] mb-2">Medication Support</h4><p class="text-sm text-[#706562] leading-relaxed">Precise medication prompting or administration.</p></div>
+              <div class="bg-white p-8 border border-[#D4CDC1]/30 hover:border-[#A10F18] transition-colors shadow-sm"><svg class="text-[#A10F18] mb-4 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-coffee"/></svg><h4 class="font-bold text-[#2E1113] mb-2">Nutrition</h4><p class="text-sm text-[#706562] leading-relaxed">Assistance with meal preparation and healthy eating.</p></div>
+              <div class="bg-white p-8 border border-[#D4CDC1]/30 hover:border-[#A10F18] transition-colors shadow-sm"><svg class="text-[#A10F18] mb-4 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-activity"/></svg><h4 class="font-bold text-[#2E1113] mb-2">Mobility</h4><p class="text-sm text-[#706562] leading-relaxed">Support with moving safely around your home.</p></div>
+              <div class="bg-white p-8 border border-[#D4CDC1]/30 hover:border-[#A10F18] transition-colors shadow-sm"><svg class="text-[#A10F18] mb-4 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-heart"/></svg><h4 class="font-bold text-[#2E1113] mb-2">Companionship</h4><p class="text-sm text-[#706562] leading-relaxed">Consistent emotional support and wellbeing check-ins.</p></div>
+              <div class="bg-white p-8 border border-[#D4CDC1]/30 hover:border-[#A10F18] transition-colors shadow-sm"><svg class="text-[#A10F18] mb-4 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-shopping-cart"/></svg><h4 class="font-bold text-[#2E1113] mb-2">Household Tasks</h4><p class="text-sm text-[#706562] leading-relaxed">Help with light cleaning, laundry, and grocery shopping.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUPPORTED LIVING -->
+    <div id="page-supported" class="page hidden">
+      <div class="animate-fade-in pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="max-w-7xl mx-auto relative mb-20 min-h-[450px] flex items-center">
+            <div class="absolute top-0 right-0 w-full lg:w-3/4 h-full pointer-events-none z-0">
+              <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=1200" alt="Community kitchen" class="w-full h-full object-cover opacity-[0.08] grayscale" />
+              <div class="absolute inset-0 bg-gradient-to-r from-[#F6F6F5] via-transparent to-transparent"></div>
+            </div>
+            <div class="max-w-3xl relative z-10">
+              <div class="flex items-center space-x-2 text-[#A10F18] mb-6 font-bold tracking-widest uppercase text-sm"><div class="w-8 h-[2px] bg-[#A10F18]"></div><span>Tailored Supported Living</span></div>
+              <h1 class="text-5xl lg:text-7xl font-serif font-bold text-[#2E1113] mb-8 leading-tight">A Foundation for <br/><span class="text-[#A10F18]">Recovery & Autonomy.</span></h1>
+              <p class="text-xl text-[#706562] leading-relaxed max-w-2xl">Platinum Ruby Care provides nurse-led supported living specifically designed for young adults transitioning into independent adulthood.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONSULTING -->
+    <div id="page-consulting" class="page hidden">
+      <div class="animate-fade-in pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="max-w-4xl mb-20">
+            <div class="flex items-center space-x-2 text-[#A10F18] mb-6 font-bold tracking-widest uppercase text-sm"><div class="w-8 h-[2px] bg-[#A10F18]"></div><span>Professional Clinical Advisory</span></div>
+            <h1 class="text-5xl lg:text-6xl font-serif font-bold text-[#2E1113] mb-8 leading-tight">Expert Mental Health <br/><span class="text-[#A10F18]">Consulting Services.</span></h1>
+            <p class="text-xl text-[#706562] leading-relaxed">Strategic clinical services led by <strong>Keasha Jasmin Isaac-Maja</strong>. We provide individuals, families, and organizations with high-level psychiatric expertise to manage complex cases and improve care standards.</p>
+          </div>
+          <div class="mb-24">
+            <h2 class="text-4xl font-serif font-bold text-[#2E1113] mb-12 border-b border-[#D4CDC1] pb-6">Specialist Consulting Portfolio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div class="bg-white p-10 border border-gray-100 shadow-lg hover:shadow-xl transition-all border-t-4 border-[#A10F18]"><svg class="text-[#A10F18] mb-8 w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-brain"/></svg><h3 class="text-xl font-bold text-[#2E1113] mb-4 min-h-[56px] leading-tight">Holistic Mental Health Assessments</h3><p class="text-sm text-[#706562] leading-relaxed mb-6">Comprehensive clinical evaluations to deeply understand an individual's needs, risks, and specific support requirements.</p><div class="flex items-center text-[#A10F18] font-bold text-xs uppercase tracking-widest"><span>Clinically Governed</span><div class="w-6 h-[1px] bg-[#A10F18] ml-2"></div></div></div>
+              <div class="bg-white p-10 border border-gray-100 shadow-lg hover:shadow-xl transition-all border-t-4 border-[#A10F18]"><svg class="text-[#A10F18] mb-8 w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-microscope"/></svg><h3 class="text-xl font-bold text-[#2E1113] mb-4 min-h-[56px] leading-tight">Substance Use Assessments</h3><p class="text-sm text-[#706562] leading-relaxed mb-6">Specialist screening and evaluation for substance misuse within a mental health framework to guide treatment pathways.</p><div class="flex items-center text-[#A10F18] font-bold text-xs uppercase tracking-widest"><span>Clinically Governed</span><div class="w-6 h-[1px] bg-[#A10F18] ml-2"></div></div></div>
+              <div class="bg-white p-10 border border-gray-100 shadow-lg hover:shadow-xl transition-all border-t-4 border-[#A10F18]"><svg class="text-[#A10F18] mb-8 w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-users"/></svg><h3 class="text-xl font-bold text-[#2E1113] mb-4 min-h-[56px] leading-tight">Collaborative Care Planning</h3><p class="text-sm text-[#706562] leading-relaxed mb-6">Working alongside service users and carers to define clear goals, evidenced treatments, and measurable review points.</p><div class="flex items-center text-[#A10F18] font-bold text-xs uppercase tracking-widest"><span>Clinically Governed</span><div class="w-6 h-[1px] bg-[#A10F18] ml-2"></div></div></div>
+              <div class="bg-white p-10 border border-gray-100 shadow-lg hover:shadow-xl transition-all border-t-4 border-[#A10F18]"><svg class="text-[#A10F18] mb-8 w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-lightbulb"/></svg><h3 class="text-xl font-bold text-[#2E1113] mb-4 min-h-[56px] leading-tight">Psychoeducation</h3><p class="text-sm text-[#706562] leading-relaxed mb-6">Explaining conditions, treatments, and coping strategies to individuals and families to empower recovery planning.</p><div class="flex items-center text-[#A10F18] font-bold text-xs uppercase tracking-widest"><span>Clinically Governed</span><div class="w-6 h-[1px] bg-[#A10F18] ml-2"></div></div></div>
+              <div class="bg-white p-10 border border-gray-100 shadow-lg hover:shadow-xl transition-all border-t-4 border-[#A10F18]"><svg class="text-[#A10F18] mb-8 w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-graduation-cap"/></svg><h3 class="text-xl font-bold text-[#2E1113] mb-4 min-h-[56px] leading-tight">Staff Training & Education</h3><p class="text-sm text-[#706562] leading-relaxed mb-6">Leading professional development for care teams in best-practice mental health care and clinical safety.</p><div class="flex items-center text-[#A10F18] font-bold text-xs uppercase tracking-widest"><span>Clinically Governed</span><div class="w-6 h-[1px] bg-[#A10F18] ml-2"></div></div></div>
+              <div class="bg-white p-10 border border-gray-100 shadow-lg hover:shadow-xl transition-all border-t-4 border-[#A10F18]"><svg class="text-[#A10F18] mb-8 w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-user-plus"/></svg><h3 class="text-xl font-bold text-[#2E1113] mb-4 min-h-[56px] leading-tight">Clinical Supervision & Mentoring</h3><p class="text-sm text-[#706562] leading-relaxed mb-6">High-level professional supervision and mentoring for junior nurses and multidisciplinary clinical teams.</p><div class="flex items-center text-[#A10F18] font-bold text-xs uppercase tracking-widest"><span>Clinically Governed</span><div class="w-6 h-[1px] bg-[#A10F18] ml-2"></div></div></div>
+            </div>
+          </div>
+          <div class="mb-24">
+            <div class="bg-white border-y-8 border-[#A10F18] p-12 lg:p-20 relative overflow-hidden shadow-sm">
+              <div class="absolute top-0 right-0 w-96 h-96 bg-[#D4CDC1]/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
+              <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                <div class="lg:col-span-5">
+                  <div class="inline-flex items-center space-x-2 border-l-4 border-[#A10F18] bg-[#F6F6F5] px-4 py-2 text-xs font-bold tracking-[0.2em] uppercase mb-8 text-[#2E1113]"><svg class="w-4 h-4 text-[#A10F18]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-fingerprint"/></svg><span>The Distinction</span></div>
+                  <h2 class="text-4xl lg:text-5xl font-serif font-bold text-[#2E1113] mb-8 leading-tight">Grounded in NHS <br/> Senior Practice.</h2>
+                  <p class="text-[#706562] text-lg leading-relaxed mb-10">All consulting services are personally overseen by Keasha Jasmin Isaac-Maja, leveraging 15+ years of Band 7 level leadership within the NHS.</p>
+                  <div class="flex items-center space-x-4 p-6 bg-[#F6F6F5] border-l-4 border-[#A10F18]"><div class="text-3xl font-serif font-bold text-[#A10F18]">15+</div><div class="text-xs uppercase font-bold tracking-widest text-[#2E1113]">Years of Clinical <br/> Frontline Expertise</div></div>
+                </div>
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12">
+                  <div class="border-b border-[#D4CDC1]/40 pb-6 hover:border-[#A10F18] transition-colors"><svg class="text-[#A10F18] mb-4 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-stethoscope"/></svg><h4 class="text-lg font-bold text-[#2E1113] mb-3">Frontline NHS Acuity</h4><p class="text-sm text-[#706562] leading-relaxed">Direct experience in Section 136 triage and high-intensity crisis management.</p></div>
+                  <div class="border-b border-[#D4CDC1]/40 pb-6 hover:border-[#A10F18] transition-colors"><svg class="text-[#A10F18] mb-4 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-bar-chart"/></svg><h4 class="text-lg font-bold text-[#2E1113] mb-3">Validated Outcomes</h4><p class="text-sm text-[#706562] leading-relaxed">Proven track record in service transformation across healthcare teams.</p></div>
+                  <div class="border-b border-[#D4CDC1]/40 pb-6 hover:border-[#A10F18] transition-colors"><svg class="text-[#A10F18] mb-4 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-building"/></svg><h4 class="text-lg font-bold text-[#2E1113] mb-3">Housing Intersection</h4><p class="text-sm text-[#706562] leading-relaxed">Unique background in healthcare property development and tenancy stability.</p></div>
+                  <div class="border-b border-[#D4CDC1]/40 pb-6 hover:border-[#A10F18] transition-colors"><svg class="text-[#A10F18] mb-4 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-shield-check"/></svg><h4 class="text-lg font-bold text-[#2E1113] mb-3">CQC Integrity</h4><p class="text-sm text-[#706562] leading-relaxed">Deep fluency in CQC Key Lines of Enquiry (KLOEs) and clinical governance.</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-[#F6F6F5] border border-[#D4CDC1]/50 p-16 text-center shadow-sm mb-24">
+            <h2 class="text-3xl lg:text-4xl font-serif font-bold text-[#2E1113] mb-6">Support your team to support others.</h2>
+            <button onclick="setPage('contact')" class="bg-[#A10F18] text-white px-14 py-6 font-bold flex items-center justify-center mx-auto hover:bg-[#2E1113] transition-all group shadow-2xl">
+              Book an Initial Discussion <svg class="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-arrow-right"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REFERRALS -->
+    <div id="page-referrals" class="page hidden">
+      <div class="animate-fade-in pt-40 pb-24">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            <div>
+              <h1 class="text-5xl font-serif font-bold text-[#2E1113] mb-8 leading-tight">Professional Referrals</h1>
+              <p class="text-xl text-[#706562] mb-12">Platinum Ruby Care provides a high-acuity bridge for individuals transitioning from NHS services.</p>
+              <div class="space-y-8">
+                <div class="bg-white p-8 border-l-4 border-[#A10F18] shadow-lg"><h3 class="font-bold text-[#2E1113] mb-2 text-xl">CQC Excellence</h3><p class="text-[#706562]">All referrals are triaged by our Specialist RMN within 24 hours.</p></div>
+              </div>
+            </div>
+            <div class="bg-white p-12 shadow-2xl border-t-8 border-[#A10F18]">
+              <h2 class="text-2xl font-serif font-bold text-[#2E1113] mb-8">Secure Referral Form</h2>
+              <form id="referral-form" class="space-y-6">
+                <div class="grid grid-cols-2 gap-6"><input type="text" placeholder="Your Name" class="col-span-1 border-b-2 border-[#D4CDC1] py-3 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" /><input type="text" placeholder="Professional Role" class="col-span-1 border-b-2 border-[#D4CDC1] py-3 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" /></div>
+                <input type="text" placeholder="Organisation/NHS Trust" class="w-full border-b-2 border-[#D4CDC1] py-3 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" />
+                <textarea rows="4" placeholder="Service User Profile (Brief)" class="w-full border border-[#D4CDC1] p-4 focus:outline-none focus:border-[#A10F18] text-sm bg-transparent"></textarea>
+                <button type="submit" class="w-full bg-[#A10F18] text-white py-5 font-bold text-lg hover:bg-[#2E1113] transition-all">Submit Initial Inquiry</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAREERS (placeholder - not in original TSX) -->
+    <div id="page-careers" class="page hidden">
+      <div class="animate-fade-in pt-40 pb-24">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="max-w-3xl mb-12">
+            <div class="flex items-center space-x-2 text-[#A10F18] mb-6 font-bold tracking-widest uppercase text-sm"><div class="w-8 h-[2px] bg-[#A10F18]"></div><span>Join Our Team</span></div>
+            <h1 class="text-5xl font-serif font-bold text-[#2E1113] mb-8 leading-tight">Build a Career in <span class="text-[#A10F18]">Clinical Care.</span></h1>
+            <p class="text-xl text-[#706562] leading-relaxed">Join a nurse-led organisation that values clinical excellence and supportive culture. We're looking for dedicated professionals to deliver exceptional mental health support.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-10 border-l-4 border-[#A10F18] shadow-lg"><h3 class="text-xl font-bold text-[#2E1113] mb-2">Nursing Roles</h3><p class="text-[#706562]">RMN and mental health nursing positions.</p></div>
+            <div class="bg-white p-10 border-l-4 border-[#A10F18] shadow-lg"><h3 class="text-xl font-bold text-[#2E1113] mb-2">Support Workers</h3><p class="text-[#706562]">Domiciliary and supported living roles.</p></div>
+          </div>
+          <button onclick="setPage('contact')" class="mt-12 bg-[#A10F18] text-white px-10 py-5 rounded-sm font-bold hover:bg-[#2E1113] transition-all">Get in Touch</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- INSIGHTS (placeholder - not in original TSX) -->
+    <div id="page-insights" class="page hidden">
+      <div class="animate-fade-in pt-40 pb-24">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="max-w-3xl mb-12">
+            <div class="flex items-center space-x-2 text-[#A10F18] mb-6 font-bold tracking-widest uppercase text-sm"><div class="w-8 h-[2px] bg-[#A10F18]"></div><span>Resources & Knowledge</span></div>
+            <h1 class="text-5xl font-serif font-bold text-[#2E1113] mb-8 leading-tight">Insights & <span class="text-[#A10F18]">Best Practice.</span></h1>
+            <p class="text-xl text-[#706562] leading-relaxed">Clinical perspectives, industry updates, and resources for families and professionals.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-8 border border-[#D4CDC1]/30 hover:border-[#A10F18] transition-colors"><h4 class="font-bold text-[#2E1113] mb-2">Clinical Governance</h4><p class="text-sm text-[#706562]">Understanding CQC standards and best practice.</p></div>
+            <div class="bg-white p-8 border border-[#D4CDC1]/30 hover:border-[#A10F18] transition-colors"><h4 class="font-bold text-[#2E1113] mb-2">Trauma-Informed Care</h4><p class="text-sm text-[#706562]">Principles and applications in community settings.</p></div>
+            <div class="bg-white p-8 border border-[#D4CDC1]/30 hover:border-[#A10F18] transition-colors"><h4 class="font-bold text-[#2E1113] mb-2">Transition Support</h4><p class="text-sm text-[#706562]">Supporting young adults into independence.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="page-contact" class="page hidden">
+      <div class="animate-fade-in pt-40 pb-24">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-20">
+          <div>
+            <h1 class="text-5xl font-serif font-bold text-[#2E1113] mb-8 leading-tight underline decoration-[#A10F18] decoration-4">Contact Our <br/>Clinical Team.</h1>
+            <div class="space-y-10 mt-12">
+              <div class="flex items-center space-x-6"><div class="w-16 h-16 bg-[#F6F6F5] flex items-center justify-center rounded-full text-[#A10F18] shadow-md"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-phone"/></svg></div><div><p class="text-xs font-bold text-[#706562] uppercase tracking-widest mb-1">Direct Line</p><p class="text-2xl font-bold text-[#2E1113]">07837 773754</p></div></div>
+              <div class="flex items-center space-x-6"><div class="w-16 h-16 bg-[#F6F6F5] flex items-center justify-center rounded-full text-[#A10F18] shadow-md"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-mail"/></svg></div><div><p class="text-xs font-bold text-[#706562] uppercase tracking-widest mb-1">Email Correspondence</p><p class="text-2xl font-bold text-[#2E1113]">KeashaJasmin@gmail.com</p></div></div>
+            </div>
+          </div>
+          <div class="bg-white p-12 shadow-2xl border border-[#D4CDC1]/30">
+            <h2 class="text-2xl font-serif font-bold text-[#2E1113] mb-8">Enquiry Form</h2>
+            <form id="contact-form" class="space-y-6">
+              <div class="grid grid-cols-2 gap-6"><input type="text" placeholder="First Name" class="col-span-1 border-b-2 border-[#D4CDC1] py-4 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" /><input type="text" placeholder="Last Name" class="col-span-1 border-b-2 border-[#D4CDC1] py-4 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" /></div>
+              <input type="email" placeholder="Email Address" class="w-full border-b-2 border-[#D4CDC1] py-4 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" />
+              <textarea rows="5" placeholder="How can our clinical team help?" class="w-full border border-[#D4CDC1] p-5 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent"></textarea>
+              <button type="submit" class="w-full bg-[#A10F18] text-white py-5 font-bold hover:bg-[#2E1113] transition-all uppercase tracking-widest text-lg shadow-lg">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#2E1113] text-white pt-20 pb-10 px-4">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-white/10 pb-16">
+      <div>
+        <h3 class="text-xl font-serif font-bold mb-6 uppercase tracking-wider text-white">Platinum Ruby Care</h3>
+        <p class="text-white/70 text-sm leading-relaxed mb-6">Specialist nurse-led mental health support delivering clinical excellence in the community. Registered and aligned with CQC standards.</p>
+        <div class="flex items-center space-x-4"><div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 cursor-pointer transition-all"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-external-link"/></svg></div></div>
+      </div>
+      <div><h4 class="font-bold mb-6">Quick Links</h4>
+        <ul class="space-y-4 text-white/70 text-sm">
+          <li><button onclick="setPage('about')" class="hover:text-white text-left">Our Story</button></li>
+          <li><button onclick="setPage('domiciliary')" class="hover:text-white text-left">Domiciliary Care</button></li>
+          <li><button onclick="setPage('supported')" class="hover:text-white text-left">Supported Living</button></li>
+          <li><button onclick="setPage('careers')" class="hover:text-white text-left">Join the Team</button></li>
+        </ul>
+      </div>
+      <div><h4 class="font-bold mb-6">Clinical Integrity</h4>
+        <ul class="space-y-4 text-white/70 text-sm">
+          <li><button onclick="setPage('referrals')" class="hover:text-white text-left">Referral Portal</button></li>
+          <li><button onclick="setPage('consulting')" class="hover:text-white text-left">Consulting Services</button></li>
+          <li><button onclick="setPage('about')" class="hover:text-white text-left">Clinical Governance</button></li>
+        </ul>
+      </div>
+      <div><h4 class="font-bold mb-6">Contact Us</h4>
+        <ul class="space-y-4 text-sm">
+          <li class="flex items-start"><svg class="w-5 h-5 mr-3 text-[#A10F18] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-map-pin"/></svg><span class="text-white/70">Central London Office, London, UK</span></li>
+          <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-[#A10F18] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-phone"/></svg><span class="text-white/70">07837 773754</span></li>
+          <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-[#A10F18] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-mail"/></svg><span class="text-white/70">KeashaJasmin@gmail.com</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/40"><p>© 2024 Platinum Ruby Care Ltd. Registered in England & Wales.</p></div>
+  </footer>
+
+  <script>
+    let currentPage = 'home';
+    const pages = ['home','about','domiciliary','supported','consulting','referrals','careers','insights','contact'];
+
+    function setPage(page) {
+      currentPage = page;
+      document.querySelectorAll('.page').forEach(el => el.classList.add('hidden'));
+      const target = document.getElementById('page-' + page);
+      if (target) target.classList.remove('hidden');
+      document.querySelectorAll('.nav-link').forEach(btn => {
+        btn.classList.toggle('text-[#A10F18]', btn.dataset.nav === page);
+        btn.classList.toggle('text-[#706562]', btn.dataset.nav !== page);
+      });
+      window.scrollTo(0, 0);
+    }
+
+    function closeMenu() {
+      document.getElementById('mobile-menu').classList.add('hidden');
+      document.querySelector('#menu-toggle svg use').setAttribute('href', '#icon-menu');
+    }
+
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.querySelector('#menu-toggle svg use');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.setAttribute('href', '#icon-x');
+      } else {
+        menu.classList.add('hidden');
+        icon.setAttribute('href', '#icon-menu');
+      }
+    });
+
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 20) {
+        nav.classList.add('bg-white', 'shadow-lg', 'py-2');
+        nav.classList.remove('bg-transparent', 'py-6');
+      } else {
+        nav.classList.remove('bg-white', 'shadow-lg', 'py-2');
+        nav.classList.add('bg-transparent', 'py-6');
+      }
+    });
+
+    document.querySelectorAll('.nav-link').forEach(btn => {
+      btn.addEventListener('click', () => setPage(btn.dataset.nav));
+    });
+
+    document.getElementById('referral-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you. Your referral inquiry has been submitted. Our team will respond within 24 hours.');
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for your message. Our clinical team will be in touch soon.');
+    });
+
+    setPage('home');
+  </script>
+</body>
+</html>
