@@ -16,8 +16,9 @@
       --charcoal-text: #706562;
       --off-white: #F6F6F5;
     }
-    body { font-family: 'Inter', sans-serif; }
+    body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
     .font-serif { font-family: 'Cormorant Garamond', serif; }
+    img { max-width: 100%; height: auto; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     .animate-fade-in { animation: fadeIn 0.7s ease-out forwards; }
     @keyframes slideInFromTop { from { transform: translateY(-10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
@@ -25,7 +26,7 @@
     .icon { flex-shrink: 0; }
   </style>
 </head>
-<body class="min-h-screen bg-[#F6F6F5] text-[#706562]" style="font-family: 'Inter', sans-serif;">
+<body class="min-h-screen flex flex-col bg-[#F6F6F5] text-[#706562]" style="font-family: 'Inter', sans-serif;">
   <!-- SVG Icons (inline, hidden) -->
   <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
     <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="18" x2="20" y2="18"/></symbol>
@@ -56,13 +57,11 @@
   </svg>
 
   <!-- Navbar -->
-  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-6">
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4 sm:py-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center">
-        <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="setPage('home')">
-          <span class="text-xl md:text-2xl font-serif font-bold tracking-tight uppercase" style="color: #2E1113;">
-            Platinum <span style="color: #A10F18;">Ruby Care</span>
-          </span>
+        <div class="flex-shrink-0 flex items-center cursor-pointer max-w-[180px] sm:max-w-[220px] md:max-w-none" onclick="setPage('home')">
+          <img src="assets/logo.png" alt="Platinum Ruby - Unified by Care. Driven by Compassion" class="h-10 sm:h-12 md:h-14 w-auto object-contain object-left" />
         </div>
         <div class="hidden lg:flex items-center space-x-8">
           <button data-nav="home" class="nav-link text-sm font-bold min-w-max tracking-wide hover:text-[#A10F18] text-[#706562]">Home</button>
@@ -99,26 +98,26 @@
     </div>
   </nav>
 
-  <main id="main-content" class="transition-opacity duration-500">
+  <main id="main-content" class="flex-1 transition-opacity duration-500">
     <!-- HOME -->
     <div id="page-home" class="page">
-      <section class="relative min-h-[95vh] flex items-center pt-40 lg:pt-52 overflow-hidden bg-white">
+      <section class="relative min-h-[85vh] sm:min-h-[90vh] lg:min-h-[95vh] flex items-center pt-28 sm:pt-36 lg:pt-52 overflow-hidden bg-white">
         <div class="absolute inset-0 z-0">
           <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10 lg:via-white/60"></div>
           <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=2000" alt="Healthcare Leadership" class="w-full h-full object-cover object-[50%_20%]" />
         </div>
-        <div class="relative z-20 max-w-7xl mx-auto px-4 w-full pb-40">
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 w-full pb-24 sm:pb-32 lg:pb-40">
           <div class="max-w-2xl">
-            <div class="flex items-center space-x-3 text-[#A10F18] mb-6 font-bold tracking-[0.2em] text-xs uppercase">
-              <div class="w-10 h-[2px] bg-[#A10F18]"></div>
-              <span>Nurse-Led Mental Health Specialist</span>
+            <div class="flex items-center space-x-2 sm:space-x-3 text-[#A10F18] mb-4 sm:mb-6 font-bold tracking-[0.1em] sm:tracking-[0.2em] text-[10px] sm:text-xs uppercase">
+              <div class="w-6 sm:w-10 h-[2px] bg-[#A10F18] shrink-0"></div>
+              <span class="break-words">Nurse-Led Mental Health Specialist</span>
             </div>
-            <h1 class="text-5xl lg:text-7xl font-serif font-bold text-[#2E1113] leading-[1.05] mb-8">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-[#2E1113] leading-[1.1] mb-6 sm:mb-8">
               Clinically Informed <br />
               <span class="text-[#A10F18]">Pathways to </span> <br />
               Independence.
             </h1>
-            <p class="text-xl text-[#706562] mb-12 leading-relaxed max-w-lg font-medium">
+            <p class="text-base sm:text-lg lg:text-xl text-[#706562] mb-8 sm:mb-12 leading-relaxed max-w-lg font-medium">
               Specialist support for young adults, delivering hospital-standard clinical rigour in a community setting.
             </p>
             <div class="flex flex-col sm:flex-row gap-5">
@@ -130,28 +129,28 @@
           </div>
         </div>
       </section>
-      <section class="py-24 bg-white relative z-30">
-        <div class="max-w-7xl mx-auto px-4">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:-mt-24">
-            <div class="bg-white p-10 shadow-2xl hover:-translate-y-2 transition-all border-b-4 border-[#A10F18] cursor-pointer ring-1 ring-gray-100 group">
+      <section class="py-12 sm:py-16 lg:py-24 bg-white relative z-30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:-mt-24">
+            <div class="bg-white p-6 sm:p-8 lg:p-10 shadow-2xl hover:-translate-y-2 transition-all border-b-4 border-[#A10F18] cursor-pointer ring-1 ring-gray-100 group">
               <svg class="text-[#A10F18] mb-8 w-9 h-9 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-heart"/></svg>
               <h3 class="text-xl font-bold text-[#2E1113] mb-4 group-hover:text-[#A10F18] transition-colors">Families & Young People</h3>
               <p class="text-[#706562] text-sm leading-relaxed mb-8">Expert care that respects dignity and fosters independence.</p>
               <span class="text-xs font-bold uppercase tracking-widest text-[#A10F18] flex items-center">Learn More <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-arrow-right"/></svg></span>
             </div>
-            <div class="bg-white p-10 shadow-2xl hover:-translate-y-2 transition-all border-b-4 border-[#A10F18] cursor-pointer ring-1 ring-gray-100 group">
+            <div class="bg-white p-6 sm:p-8 lg:p-10 shadow-2xl hover:-translate-y-2 transition-all border-b-4 border-[#A10F18] cursor-pointer ring-1 ring-gray-100 group">
               <svg class="text-[#A10F18] mb-8 w-9 h-9 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-stethoscope"/></svg>
               <h3 class="text-xl font-bold text-[#2E1113] mb-4 group-hover:text-[#A10F18] transition-colors">Professionals & Referrers</h3>
               <p class="text-[#706562] text-sm leading-relaxed mb-8">Streamlined clinical assessments and robust risk management.</p>
               <span class="text-xs font-bold uppercase tracking-widest text-[#A10F18] flex items-center">Learn More <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-arrow-right"/></svg></span>
             </div>
-            <div class="bg-white p-10 shadow-2xl hover:-translate-y-2 transition-all border-b-4 border-[#A10F18] cursor-pointer ring-1 ring-gray-100 group">
+            <div class="bg-white p-6 sm:p-8 lg:p-10 shadow-2xl hover:-translate-y-2 transition-all border-b-4 border-[#A10F18] cursor-pointer ring-1 ring-gray-100 group">
               <svg class="text-[#A10F18] mb-8 w-9 h-9 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-shield-check"/></svg>
               <h3 class="text-xl font-bold text-[#2E1113] mb-4 group-hover:text-[#A10F18] transition-colors">Commissioners & Partners</h3>
               <p class="text-[#706562] text-sm leading-relaxed mb-8">Outcomes-focused housing and high-acuity support solutions.</p>
               <span class="text-xs font-bold uppercase tracking-widest text-[#A10F18] flex items-center">Learn More <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-arrow-right"/></svg></span>
             </div>
-            <div class="bg-white p-10 shadow-2xl hover:-translate-y-2 transition-all border-b-4 border-[#A10F18] cursor-pointer ring-1 ring-gray-100 group">
+            <div class="bg-white p-6 sm:p-8 lg:p-10 shadow-2xl hover:-translate-y-2 transition-all border-b-4 border-[#A10F18] cursor-pointer ring-1 ring-gray-100 group">
               <svg class="text-[#A10F18] mb-8 w-9 h-9 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-users"/></svg>
               <h3 class="text-xl font-bold text-[#2E1113] mb-4 group-hover:text-[#A10F18] transition-colors">Careers in Care</h3>
               <p class="text-[#706562] text-sm leading-relaxed mb-8">Build a clinical career in a supportive, nurse-led culture.</p>
@@ -160,10 +159,10 @@
           </div>
         </div>
       </section>
-      <section class="py-24 bg-[#F6F6F5]">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <section class="py-12 sm:py-16 lg:py-24 bg-[#F6F6F5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
-            <h2 class="text-4xl lg:text-5xl font-serif font-bold text-[#2E1113] mb-10 leading-tight">The Ruby Model: <br />Where Safety Meets Growth.</h2>
+            <h2 class="text-2xl sm:text-3xl lg:text-5xl font-serif font-bold text-[#2E1113] mb-6 sm:mb-10 leading-tight">The Ruby Model: <br />Where Safety Meets Growth.</h2>
             <div class="space-y-10">
               <div class="flex gap-6">
                 <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center shrink-0 shadow-md"><svg class="w-7 h-7 text-[#A10F18]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-check-circle"/></svg></div>
@@ -189,12 +188,12 @@
 
     <!-- ABOUT -->
     <div id="page-about" class="page hidden">
-      <div class="animate-fade-in pt-32 pb-24">
-        <div class="max-w-7xl mx-auto px-4">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
+      <div class="animate-fade-in pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16 sm:mb-32">
             <div>
               <span class="text-[#A10F18] font-bold tracking-widest uppercase text-sm mb-4 block">Our Heritage</span>
-              <h1 class="text-5xl font-serif font-bold text-[#2E1113] mb-8 leading-tight">Clinical Rigour. <br/>Community Compassion.</h1>
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#2E1113] mb-6 sm:mb-8 leading-tight">Clinical Rigour. <br/>Community Compassion.</h1>
               <p class="text-xl text-[#706562] mb-6 leading-relaxed">Platinum Ruby Care was born from the intersection of high-stakes mental health nursing and specialist housing management.</p>
               <p class="text-[#706562] leading-relaxed mb-8">Our founder, <strong>Keasha Jasmin Isaac-Maja</strong>, recognized that clinical excellence in hospitals often failed to translate into community stability. By combining her 15+ years of NHS Senior Practice with her expertise in property development, she created a service that provides both a safe home and a therapeutic pathway.</p>
               <div class="grid grid-cols-2 gap-6">
@@ -204,9 +203,9 @@
             </div>
             <div class="bg-[#D4CDC1] aspect-[4/5] rounded-lg overflow-hidden relative shadow-2xl">
               <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=800" alt="Keasha Jasmin Isaac-Maja" class="w-full h-full object-cover" />
-              <div class="absolute bottom-0 left-0 right-0 bg-[#2E1113] p-10 text-white">
-                <p class="font-serif text-3xl font-bold mb-1">Keasha Jasmin Isaac-Maja</p>
-                <p class="text-[#A10F18] font-bold text-sm uppercase tracking-widest">Specialist RMN | Founder & Clinical Director</p>
+              <div class="absolute bottom-0 left-0 right-0 bg-[#2E1113] p-4 sm:p-6 lg:p-10 text-white">
+                <p class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold mb-1">Keasha Jasmin Isaac-Maja</p>
+                <p class="text-[#A10F18] font-bold text-xs sm:text-sm uppercase tracking-widest">Specialist RMN | Founder & Clinical Director</p>
               </div>
             </div>
           </div>
@@ -216,11 +215,11 @@
 
     <!-- DOMICILIARY -->
     <div id="page-domiciliary" class="page hidden">
-      <div class="animate-fade-in pt-32 pb-24">
-        <div class="max-w-7xl mx-auto px-4">
+      <div class="animate-fade-in pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
           <div class="max-w-3xl mb-20">
             <div class="flex items-center space-x-2 text-[#A10F18] mb-6 font-bold tracking-widest uppercase text-sm"><div class="w-8 h-[2px] bg-[#A10F18]"></div><span>Home-Based Specialist Support</span></div>
-            <h1 class="text-5xl lg:text-6xl font-serif font-bold text-[#2E1113] mb-8 leading-tight">Nurse-Led Care, <br/><span class="text-[#A10F18]">In the Place You Call Home.</span></h1>
+            <h1 class="text-3xl sm:text-4xl lg:text-6xl font-serif font-bold text-[#2E1113] mb-6 sm:mb-8 leading-tight">Nurse-Led Care, <br/><span class="text-[#A10F18]">In the Place You Call Home.</span></h1>
             <p class="text-xl text-[#706562] leading-relaxed">Platinum Ruby Care provides specialist domiciliary care with profound mental health expertise. We support you to remain safely in your own home while maintaining independence and dignity.</p>
           </div>
           <div class="mb-32">
@@ -240,16 +239,16 @@
 
     <!-- SUPPORTED LIVING -->
     <div id="page-supported" class="page hidden">
-      <div class="animate-fade-in pt-32 pb-24">
-        <div class="max-w-7xl mx-auto px-4">
-          <div class="max-w-7xl mx-auto relative mb-20 min-h-[450px] flex items-center">
+      <div class="animate-fade-in pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+          <div class="max-w-7xl mx-auto relative mb-12 sm:mb-20 min-h-[320px] sm:min-h-[400px] lg:min-h-[450px] flex items-center">
             <div class="absolute top-0 right-0 w-full lg:w-3/4 h-full pointer-events-none z-0">
               <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=1200" alt="Community kitchen" class="w-full h-full object-cover opacity-[0.08] grayscale" />
               <div class="absolute inset-0 bg-gradient-to-r from-[#F6F6F5] via-transparent to-transparent"></div>
             </div>
             <div class="max-w-3xl relative z-10">
               <div class="flex items-center space-x-2 text-[#A10F18] mb-6 font-bold tracking-widest uppercase text-sm"><div class="w-8 h-[2px] bg-[#A10F18]"></div><span>Tailored Supported Living</span></div>
-              <h1 class="text-5xl lg:text-7xl font-serif font-bold text-[#2E1113] mb-8 leading-tight">A Foundation for <br/><span class="text-[#A10F18]">Recovery & Autonomy.</span></h1>
+              <h1 class="text-3xl sm:text-4xl lg:text-7xl font-serif font-bold text-[#2E1113] mb-6 sm:mb-8 leading-tight">A Foundation for <br/><span class="text-[#A10F18]">Recovery & Autonomy.</span></h1>
               <p class="text-xl text-[#706562] leading-relaxed max-w-2xl">Platinum Ruby Care provides nurse-led supported living specifically designed for young adults transitioning into independent adulthood.</p>
             </div>
           </div>
@@ -259,11 +258,11 @@
 
     <!-- CONSULTING -->
     <div id="page-consulting" class="page hidden">
-      <div class="animate-fade-in pt-32 pb-24">
-        <div class="max-w-7xl mx-auto px-4">
+      <div class="animate-fade-in pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
           <div class="max-w-4xl mb-20">
             <div class="flex items-center space-x-2 text-[#A10F18] mb-6 font-bold tracking-widest uppercase text-sm"><div class="w-8 h-[2px] bg-[#A10F18]"></div><span>Professional Clinical Advisory</span></div>
-            <h1 class="text-5xl lg:text-6xl font-serif font-bold text-[#2E1113] mb-8 leading-tight">Expert Mental Health <br/><span class="text-[#A10F18]">Consulting Services.</span></h1>
+            <h1 class="text-3xl sm:text-4xl lg:text-6xl font-serif font-bold text-[#2E1113] mb-6 sm:mb-8 leading-tight">Expert Mental Health <br/><span class="text-[#A10F18]">Consulting Services.</span></h1>
             <p class="text-xl text-[#706562] leading-relaxed">Strategic clinical services led by <strong>Keasha Jasmin Isaac-Maja</strong>. We provide individuals, families, and organizations with high-level psychiatric expertise to manage complex cases and improve care standards.</p>
           </div>
           <div class="mb-24">
@@ -278,7 +277,7 @@
             </div>
           </div>
           <div class="mb-24">
-            <div class="bg-white border-y-8 border-[#A10F18] p-12 lg:p-20 relative overflow-hidden shadow-sm">
+            <div class="bg-white border-y-8 border-[#A10F18] p-6 sm:p-10 lg:p-20 relative overflow-hidden shadow-sm">
               <div class="absolute top-0 right-0 w-96 h-96 bg-[#D4CDC1]/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
               <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
                 <div class="lg:col-span-5">
@@ -296,8 +295,8 @@
               </div>
             </div>
           </div>
-          <div class="bg-[#F6F6F5] border border-[#D4CDC1]/50 p-16 text-center shadow-sm mb-24">
-            <h2 class="text-3xl lg:text-4xl font-serif font-bold text-[#2E1113] mb-6">Support your team to support others.</h2>
+          <div class="bg-[#F6F6F5] border border-[#D4CDC1]/50 p-8 sm:p-12 lg:p-16 text-center shadow-sm mb-16 sm:mb-24">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#2E1113] mb-4 sm:mb-6">Support your team to support others.</h2>
             <button onclick="setPage('contact')" class="bg-[#A10F18] text-white px-14 py-6 font-bold flex items-center justify-center mx-auto hover:bg-[#2E1113] transition-all group shadow-2xl">
               Book an Initial Discussion <svg class="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-arrow-right"/></svg>
             </button>
@@ -308,23 +307,23 @@
 
     <!-- REFERRALS -->
     <div id="page-referrals" class="page hidden">
-      <div class="animate-fade-in pt-40 pb-24">
-        <div class="max-w-7xl mx-auto px-4">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+      <div class="animate-fade-in pt-24 sm:pt-28 lg:pt-40 pb-12 sm:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <div>
-              <h1 class="text-5xl font-serif font-bold text-[#2E1113] mb-8 leading-tight">Professional Referrals</h1>
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#2E1113] mb-6 sm:mb-8 leading-tight">Professional Referrals</h1>
               <p class="text-xl text-[#706562] mb-12">Platinum Ruby Care provides a high-acuity bridge for individuals transitioning from NHS services.</p>
               <div class="space-y-8">
                 <div class="bg-white p-8 border-l-4 border-[#A10F18] shadow-lg"><h3 class="font-bold text-[#2E1113] mb-2 text-xl">CQC Excellence</h3><p class="text-[#706562]">All referrals are triaged by our Specialist RMN within 24 hours.</p></div>
               </div>
             </div>
-            <div class="bg-white p-12 shadow-2xl border-t-8 border-[#A10F18]">
-              <h2 class="text-2xl font-serif font-bold text-[#2E1113] mb-8">Secure Referral Form</h2>
+            <div class="bg-white p-6 sm:p-8 lg:p-12 shadow-2xl border-t-8 border-[#A10F18]">
+              <h2 class="text-xl sm:text-2xl font-serif font-bold text-[#2E1113] mb-6 sm:mb-8">Secure Referral Form</h2>
               <form id="referral-form" class="space-y-6">
-                <div class="grid grid-cols-2 gap-6"><input type="text" placeholder="Your Name" class="col-span-1 border-b-2 border-[#D4CDC1] py-3 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" /><input type="text" placeholder="Professional Role" class="col-span-1 border-b-2 border-[#D4CDC1] py-3 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" /></div>
-                <input type="text" placeholder="Organisation/NHS Trust" class="w-full border-b-2 border-[#D4CDC1] py-3 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" />
-                <textarea rows="4" placeholder="Service User Profile (Brief)" class="w-full border border-[#D4CDC1] p-4 focus:outline-none focus:border-[#A10F18] text-sm bg-transparent"></textarea>
-                <button type="submit" class="w-full bg-[#A10F18] text-white py-5 font-bold text-lg hover:bg-[#2E1113] transition-all">Submit Initial Inquiry</button>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6"><input type="text" name="name" placeholder="Your Name" class="border-b-2 border-[#D4CDC1] py-3 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" required /><input type="text" name="role" placeholder="Professional Role" class="border-b-2 border-[#D4CDC1] py-3 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" required /></div>
+                <input type="text" name="organisation" placeholder="Organisation/NHS Trust" class="w-full border-b-2 border-[#D4CDC1] py-3 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" required />
+                <textarea rows="4" name="serviceUserProfile" placeholder="Service User Profile (Brief)" class="w-full border border-[#D4CDC1] p-4 focus:outline-none focus:border-[#A10F18] text-sm bg-transparent" required></textarea>
+                <button type="submit" id="referral-submit-btn" class="w-full bg-[#A10F18] text-white py-5 font-bold text-lg hover:bg-[#2E1113] transition-all">Submit Initial Inquiry</button>
               </form>
             </div>
           </div>
@@ -334,11 +333,11 @@
 
     <!-- CAREERS (placeholder - not in original TSX) -->
     <div id="page-careers" class="page hidden">
-      <div class="animate-fade-in pt-40 pb-24">
-        <div class="max-w-7xl mx-auto px-4">
+      <div class="animate-fade-in pt-24 sm:pt-28 lg:pt-40 pb-12 sm:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
           <div class="max-w-3xl mb-12">
             <div class="flex items-center space-x-2 text-[#A10F18] mb-6 font-bold tracking-widest uppercase text-sm"><div class="w-8 h-[2px] bg-[#A10F18]"></div><span>Join Our Team</span></div>
-            <h1 class="text-5xl font-serif font-bold text-[#2E1113] mb-8 leading-tight">Build a Career in <span class="text-[#A10F18]">Clinical Care.</span></h1>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#2E1113] mb-6 sm:mb-8 leading-tight">Build a Career in <span class="text-[#A10F18]">Clinical Care.</span></h1>
             <p class="text-xl text-[#706562] leading-relaxed">Join a nurse-led organisation that values clinical excellence and supportive culture. We're looking for dedicated professionals to deliver exceptional mental health support.</p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -352,11 +351,11 @@
 
     <!-- INSIGHTS (placeholder - not in original TSX) -->
     <div id="page-insights" class="page hidden">
-      <div class="animate-fade-in pt-40 pb-24">
-        <div class="max-w-7xl mx-auto px-4">
+      <div class="animate-fade-in pt-24 sm:pt-28 lg:pt-40 pb-12 sm:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
           <div class="max-w-3xl mb-12">
             <div class="flex items-center space-x-2 text-[#A10F18] mb-6 font-bold tracking-widest uppercase text-sm"><div class="w-8 h-[2px] bg-[#A10F18]"></div><span>Resources & Knowledge</span></div>
-            <h1 class="text-5xl font-serif font-bold text-[#2E1113] mb-8 leading-tight">Insights & <span class="text-[#A10F18]">Best Practice.</span></h1>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#2E1113] mb-6 sm:mb-8 leading-tight">Insights & <span class="text-[#A10F18]">Best Practice.</span></h1>
             <p class="text-xl text-[#706562] leading-relaxed">Clinical perspectives, industry updates, and resources for families and professionals.</p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -370,22 +369,22 @@
 
     <!-- CONTACT -->
     <div id="page-contact" class="page hidden">
-      <div class="animate-fade-in pt-40 pb-24">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <div class="animate-fade-in pt-24 sm:pt-28 lg:pt-40 pb-12 sm:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           <div>
-            <h1 class="text-5xl font-serif font-bold text-[#2E1113] mb-8 leading-tight underline decoration-[#A10F18] decoration-4">Contact Our <br/>Clinical Team.</h1>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#2E1113] mb-6 sm:mb-8 leading-tight underline decoration-[#A10F18] decoration-4">Contact Our <br/>Clinical Team.</h1>
             <div class="space-y-10 mt-12">
               <div class="flex items-center space-x-6"><div class="w-16 h-16 bg-[#F6F6F5] flex items-center justify-center rounded-full text-[#A10F18] shadow-md"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-phone"/></svg></div><div><p class="text-xs font-bold text-[#706562] uppercase tracking-widest mb-1">Direct Line</p><p class="text-2xl font-bold text-[#2E1113]">07837 773754</p></div></div>
               <div class="flex items-center space-x-6"><div class="w-16 h-16 bg-[#F6F6F5] flex items-center justify-center rounded-full text-[#A10F18] shadow-md"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-mail"/></svg></div><div><p class="text-xs font-bold text-[#706562] uppercase tracking-widest mb-1">Email Correspondence</p><p class="text-2xl font-bold text-[#2E1113]">support@platinumrubycare.co.uk</p></div></div>
             </div>
           </div>
-          <div class="bg-white p-12 shadow-2xl border border-[#D4CDC1]/30">
-            <h2 class="text-2xl font-serif font-bold text-[#2E1113] mb-8">Enquiry Form</h2>
+          <div class="bg-white p-6 sm:p-8 lg:p-12 shadow-2xl border border-[#D4CDC1]/30">
+            <h2 class="text-xl sm:text-2xl font-serif font-bold text-[#2E1113] mb-6 sm:mb-8">Enquiry Form</h2>
             <form id="contact-form" class="space-y-6">
-              <div class="grid grid-cols-2 gap-6"><input type="text" placeholder="First Name" class="col-span-1 border-b-2 border-[#D4CDC1] py-4 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" /><input type="text" placeholder="Last Name" class="col-span-1 border-b-2 border-[#D4CDC1] py-4 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" /></div>
-              <input type="email" placeholder="Email Address" class="w-full border-b-2 border-[#D4CDC1] py-4 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" />
-              <textarea rows="5" placeholder="How can our clinical team help?" class="w-full border border-[#D4CDC1] p-5 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent"></textarea>
-              <button type="submit" class="w-full bg-[#A10F18] text-white py-5 font-bold hover:bg-[#2E1113] transition-all uppercase tracking-widest text-lg shadow-lg">Send Message</button>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6"><input type="text" name="firstName" placeholder="First Name" class="border-b-2 border-[#D4CDC1] py-4 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" required /><input type="text" name="lastName" placeholder="Last Name" class="border-b-2 border-[#D4CDC1] py-4 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" required /></div>
+              <input type="email" name="email" placeholder="Email Address" class="w-full border-b-2 border-[#D4CDC1] py-4 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" required />
+              <textarea rows="5" name="message" placeholder="How can our clinical team help?" class="w-full border border-[#D4CDC1] p-5 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" required></textarea>
+              <button type="submit" id="contact-submit-btn" class="w-full bg-[#A10F18] text-white py-5 font-bold hover:bg-[#2E1113] transition-all uppercase tracking-widest text-lg shadow-lg">Send Message</button>
             </form>
           </div>
         </div>
@@ -394,8 +393,8 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-[#2E1113] text-white pt-20 pb-10 px-4">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-white/10 pb-16">
+  <footer class="bg-[#2E1113] text-white pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-10 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 border-b border-white/10 pb-12 sm:pb-16">
       <div>
         <h3 class="text-xl font-serif font-bold mb-6 uppercase tracking-wider text-white">Platinum Ruby Care</h3>
         <p class="text-white/70 text-sm leading-relaxed mb-6">Specialist nurse-led mental health support delivering clinical excellence in the community. Registered and aligned with CQC standards.</p>
@@ -420,7 +419,7 @@
         <ul class="space-y-4 text-sm">
           <li class="flex items-start"><svg class="w-5 h-5 mr-3 text-[#A10F18] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-map-pin"/></svg><span class="text-white/70">Central London Office, London, UK</span></li>
           <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-[#A10F18] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-phone"/></svg><span class="text-white/70">07837 773754</span></li>
-          <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-[#A10F18] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-mail"/></svg><span class="text-white/70">KeashaJasmin@gmail.com</span></li>
+          <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-[#A10F18] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-mail"/></svg><span class="text-white/70 break-all">support@platinumrubycare.co.uk</span></li>
         </ul>
       </div>
     </div>
@@ -428,6 +427,9 @@
   </footer>
 
   <script>
+    // Replace with your deployed Google Apps Script web app URL (ends with /exec)
+    const FORM_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyt6mfiSdnFxxxSn_RzsIVangcwPWzIWrispm7tf6LeEHSjsjkyfscdcrFA-EqwMzoNLw/exec';
+
     let currentPage = 'home';
     const pages = ['home','about','domiciliary','supported','consulting','referrals','careers','insights','contact'];
 
@@ -464,10 +466,10 @@
       const nav = document.getElementById('navbar');
       if (window.scrollY > 20) {
         nav.classList.add('bg-white', 'shadow-lg', 'py-2');
-        nav.classList.remove('bg-transparent', 'py-6');
+        nav.classList.remove('bg-transparent', 'py-4', 'sm:py-6');
       } else {
         nav.classList.remove('bg-white', 'shadow-lg', 'py-2');
-        nav.classList.add('bg-transparent', 'py-6');
+        nav.classList.add('bg-transparent', 'py-4', 'sm:py-6');
       }
     });
 
@@ -475,14 +477,58 @@
       btn.addEventListener('click', () => setPage(btn.dataset.nav));
     });
 
-    document.getElementById('referral-form').addEventListener('submit', (e) => {
+    document.getElementById('referral-form').addEventListener('submit', async (e) => {
       e.preventDefault();
-      alert('Thank you. Your referral inquiry has been submitted. Our team will respond within 24 hours.');
+      const form = e.target;
+      const btn = document.getElementById('referral-submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+      try {
+        await fetch(FORM_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            formType: 'referral',
+            name: form.name.value,
+            role: form.role.value,
+            organisation: form.organisation.value,
+            serviceUserProfile: form.serviceUserProfile.value
+          })
+        });
+        alert('Thank you. Your referral inquiry has been submitted. Our team will respond within 24 hours.');
+        form.reset();
+      } catch (err) {
+        alert('There was a problem submitting. Please try again or contact us directly.');
+      }
+      btn.disabled = false;
+      btn.textContent = 'Submit Initial Inquiry';
     });
 
-    document.getElementById('contact-form').addEventListener('submit', (e) => {
+    document.getElementById('contact-form').addEventListener('submit', async (e) => {
       e.preventDefault();
-      alert('Thank you for your message. Our clinical team will be in touch soon.');
+      const form = e.target;
+      const btn = document.getElementById('contact-submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      try {
+        await fetch(FORM_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            formType: 'contact',
+            firstName: form.firstName.value,
+            lastName: form.lastName.value,
+            email: form.email.value,
+            message: form.message.value
+          })
+        });
+        alert('Thank you for your message. Our clinical team will be in touch soon.');
+        form.reset();
+      } catch (err) {
+        alert('There was a problem sending. Please try again or call us directly.');
+      }
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
     });
 
     setPage('home');
