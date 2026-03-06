@@ -35,6 +35,19 @@ This script receives form submissions from the website and appends them to Googl
 2. Find `const FORM_SCRIPT_URL = '...'` near the top of the `<script>` block.
 3. Replace the placeholder with your deployed web app URL.
 
+## CORS and iframe submission
+
+The forms submit via a hidden iframe instead of `fetch` to avoid CORS errors when the site is hosted on a different domain than `script.google.com`. The script returns HTML that uses `postMessage` to notify the page of success or failure.
+
+## Beautifying the sheet
+
+The script formats headers (bold, dark background, white text), sets column widths, freezes the header row, and uses alternating row colours. New submissions are formatted automatically.
+
+To beautify sheets that already have data, run `beautifyAllSheets` once:
+1. In the script editor, select `beautifyAllSheets` from the function dropdown
+2. Click Run
+3. Authorize if prompted
+
 ## Data stored
 
 ### Referrals sheet
