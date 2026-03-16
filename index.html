@@ -325,6 +325,10 @@
               <h2 class="text-xl sm:text-2xl font-serif font-bold text-[#2E1113] mb-6 sm:mb-8">Secure Referral Form</h2>
               <form id="referral-form" class="space-y-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6"><input type="text" name="name" placeholder="Your Name" class="border-b-2 border-[#D4CDC1] py-3 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" required /><input type="text" name="role" placeholder="Professional Role" class="border-b-2 border-[#D4CDC1] py-3 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" required /></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <input type="tel" name="phone" placeholder="Phone Number (optional)" class="border-b-2 border-[#D4CDC1] py-3 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" />
+                  <input type="email" name="email" placeholder="Email Address (optional)" class="border-b-2 border-[#D4CDC1] py-3 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" />
+                </div>
                 <input type="text" name="organisation" placeholder="Organisation/NHS Trust" class="w-full border-b-2 border-[#D4CDC1] py-3 text-sm focus:outline-none focus:border-[#A10F18] bg-transparent" required />
                 <textarea rows="4" name="serviceUserProfile" placeholder="Service User Profile (Brief)" class="w-full border border-[#D4CDC1] p-4 focus:outline-none focus:border-[#A10F18] text-sm bg-transparent" required></textarea>
                 <button type="submit" id="referral-submit-btn" class="w-full bg-[#A10F18] text-white py-5 font-bold text-lg hover:bg-[#2E1113] transition-all">Submit Initial Inquiry</button>
@@ -435,7 +439,7 @@
 
   <script>
     // Replace with your deployed Google Apps Script web app URL (ends with /exec)
-    const FORM_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyExo98iYhILdCmOsQDOzPklgyBJ3-Frp84xcdDsJxysbxI0w5EzVE_Ev4WaBkhWrbxdA/exec';
+    const FORM_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxM8Fkge7LCnY7xdBwSnQkNPPKwA04dPdxt-Xj7in0AhUwRirmO1ME4DSd2FssKO1PEyw/exec';
 
     let currentPage = 'home';
 
@@ -558,6 +562,8 @@
           formType: 'referral',
           name: form.name.value,
           role: form.role.value,
+          phone: form.phone.value,
+          email: form.email.value,
           organisation: form.organisation.value,
           serviceUserProfile: form.serviceUserProfile.value
         },
